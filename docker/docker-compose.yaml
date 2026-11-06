@@ -7,5 +7,5 @@ services:
       - "5913:5913"
       - "5914:5914"
     volumes:
-      - /opt/rttys:/etc/rttys
-    command: run --addr-http-proxy :5914
+      - ./rttys:/etc/rttys
+    command: run --db sqlite:///etc/rttys/rttys.db --addr-http-proxy :5914
